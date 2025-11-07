@@ -1,6 +1,7 @@
 # LLM Markdown Scraper Service
 
-A web scraping service built with Playwright and Fastify that converts web pages to clean markdown format using Mozilla's Readability library.
+A web scraping service built with Playwright and Fastify that converts web pages to clean markdown format using Mozilla's Readability library. This tool is designed to produce content from web pages optimized for use by Large Language Models (LLMs) and AI applications.
+
 
 ## Features
 
@@ -166,35 +167,35 @@ curl http://localhost:3000/ready
 ### Stop Container
 
 ```bash
-podman stop llm-scraper
+podman stop llm-md-scraper
 ```
 
 ### Restart Container
 
 ```bash
-podman restart llm-scraper
+podman restart llm-md-scraper
 ```
 
 ### View Logs
 
 ```bash
 # Follow logs
-podman logs -f llm-scraper
+podman logs -f llm-md-scraper
 
 # Last 100 lines
-podman logs --tail 100 llm-scraper
+podman logs --tail 100 llm-md-scraper
 ```
 
 ### Container Health Check
 
 ```bash
-podman exec llm-scraper curl -f http://localhost:3000/health || exit 1
+podman exec llm-md-scraper curl -f http://localhost:3000/health || exit 1
 ```
 
 ### Remove Container
 
 ```bash
-podman rm -f llm-scraper
+podman rm -f llm-md-scraper
 ```
 
 ### Using Docker Instead of Podman
@@ -206,7 +207,7 @@ All commands work with Docker by replacing `podman` with `docker`:
 docker build -t llm-md-scraper .
 
 # Run
-docker run -d --name llm-scraper -p 3000:3000 llm-md-scraper
+docker run -d --name llm-md-scraper -p 3000:3000 llm-md-scraper
 ```
 
 ## Architecture
